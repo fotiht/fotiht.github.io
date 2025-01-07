@@ -1,0 +1,12 @@
+baseURL = 'https://fotiht.github.io/'
+languageCode = 'en-us'
+title = 'Fotih Turopov'
+theme = 'hyde'
+[Menus]
+  main = [
+      {Name = "Github", URL = "https://github.com/fotiht/"},
+      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/fotih-turopov-a49686332/"}
+  ]
+  [params]
+  description = "Fotihs projects found here!"
+  themeColor = "theme-base-0b"
