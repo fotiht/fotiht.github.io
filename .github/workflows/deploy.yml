@@ -1,0 +1,31 @@
+name: Build and Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - master  # Or 'main' if that's the default branch of your repo
+  pull_request:
+    branches:
+      - master  # Or 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Uses an Ubuntu runner to build the site
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.140.1'  # Set your Hugo version here
+
+      - name: Build the site
+        run: hugo -D  # Builds the site with drafts enabled
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # This is automatically available
+          publish_dir: ./public  # Publish the contents of the public folder to GitHub Pages
