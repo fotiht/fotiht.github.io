@@ -1,4 +1,4 @@
-baseURL = 'https://fotiht.github.io/blog3/'
+baseURL = "https://fotiht.github.io/"
 languageCode = 'en-us'
 title = 'Fotih Turopov'
 theme = 'hyde'
