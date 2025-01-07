@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fotih Turopov</title>
+    <link>https://fotiht.github.io/</link>
+    <description>Recent content on Fotih Turopov</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jan 2025 15:56:46 -0500</lastBuildDate>
+    <atom:link href="https://fotiht.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://fotiht.github.io/posts/my-first-post/</link>
+      <pubDate>Tue, 07 Jan 2025 15:56:46 -0500</pubDate>
+      <guid>https://fotiht.github.io/posts/my-first-post/</guid>
+      <description>&lt;p&gt;This is my first post using Hugo!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
