@@ -3,43 +3,295 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#142c42">
-  <meta name="description" content="Fotih Turopov is a BS/MS student at Case Western Reserve University who does machine learning research and builds language models and robotic vision systems.">
-  <title>Fotih Turopov | Machine Learning and Robotics</title>
+  <meta name="theme-color" content="#0e2333">
+  <meta name="description" content="Fotih Turopov is a BS/MS student at Case Western Reserve University. He does machine learning research with Prof. Shuai Xu, built a mixture-of-experts language model from scratch, and writes robot vision code for CWRUbotix.">
+  <title>Fotih Turopov | Machine learning and robotics</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
   <script src="script.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="header">
-  <a href="#" class="brand" aria-label="Fotih Turopov home"><span class="monogram">ft<span>.</span></span><span class="brand-name">Fotih Turopov</span></a>
-  <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-  <a class="nav-resume" href="assets/fotih-turopov-resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
-</header>
+
 <main id="main">
-  <section class="hero wrap" aria-labelledby="intro-title">
-    <div class="hero-main"><p class="eyebrow">MACHINE LEARNING & ROBOTICS · CWRU</p><h1 id="intro-title">I study and build<br><span>machine learning systems.</span></h1><p class="hero-intro">I'm Fotih, a BS/MS student at Case Western Reserve University. I'm a machine learning research assistant for Prof. Shuai Xu, I built a language model from scratch, and I write computer vision code for the CWRUbotix robotics team.</p><div class="hero-actions"><a class="button primary" href="#work">See my work <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/fotiht" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></div></div>
-    <aside class="profile-card"><img class="portrait" src="assets/fotih-turopov.png" alt="Fotih Turopov smiling" width="345" height="469" fetchpriority="high"><div class="profile-caption"><strong>Fotih Turopov</strong><span>ML research assistant · BS/MS student</span><span>Cleveland, Ohio</span></div></aside>
-  </section>
-  <section id="work" class="work wrap" aria-labelledby="work-title">
-    <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">Research and projects</h2></div><a class="text-link" href="https://github.com/fotiht?tab=repositories" target="_blank" rel="noopener">All repositories <span aria-hidden="true">↗</span></a></div>
-    <article class="featured">
-      <div class="featured-copy"><div class="feature-label"><span>FEATURED PROJECT</span><span>2026</span></div><h3>Story MoE</h3><p class="project-subtitle">A mixture-of-experts language model I built from scratch.</p><p>I wrote and trained a decoder-only transformer in PyTorch with sparse top-2 expert routing, rotary position embeddings, and KV-cached text generation. I also wrote tests to check causal attention, routing gradients, and that cached and uncached generation match.</p><ul class="tags"><li>Python</li><li>PyTorch</li><li>Transformers</li><li>MoE</li></ul><div class="feature-stats"><div><strong>60.6M</strong><span>parameters</span></div><div><strong>20M</strong><span>training tokens</span></div><div><strong>10.03</strong><span>validation perplexity*</span></div></div><a class="button light" href="https://github.com/fotiht/story_moe" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a><p class="metric-note">*Measured on TinyStories. A dense model trained on the same number of tokens scored 10.77.</p></div>
-      <div class="architecture"><div class="diagram-header"><span>INSIDE THE MODEL</span><span>TOP-2 ROUTING</span></div><svg viewBox="0 0 460 360" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">Sparse mixture-of-experts routing</title><desc id="diagram-desc">A token representation enters a learned router. Two of four experts are selected, and their weighted outputs are combined.</desc><g fill="none" stroke="#506278" stroke-width="1.5"><path d="M230 65V110M230 150V180H60V206M230 180H174V206M230 180H288V206M230 180H402V206M60 252V280H230V307M174 252V280M288 252V280H230M402 252V280H230"/></g><g fill="none" stroke="#ace6b3" stroke-width="2"><path d="M230 150V180H174V206M230 180H288V206M174 252V280H230V307M288 252V280H230"/></g><rect x="145" y="24" width="170" height="42" rx="5" fill="#203c54" stroke="#506278"/><text x="230" y="50" text-anchor="middle" fill="#ecf1f5" font-size="14">Token representation</text><rect x="163" y="110" width="134" height="42" rx="5" fill="#e9f1f7"/><text x="230" y="136" text-anchor="middle" fill="#142c42" font-size="15">Learned router</text><rect x="16" y="207" width="88" height="46" rx="5" fill="#203c54" stroke="#506278"/><rect x="130" y="207" width="88" height="46" rx="5" fill="#ace6b3"/><rect x="244" y="207" width="88" height="46" rx="5" fill="#ace6b3"/><rect x="358" y="207" width="88" height="46" rx="5" fill="#203c54" stroke="#506278"/><g text-anchor="middle" font-size="14"><text x="60" y="236" fill="#bac6d2">Expert 1</text><text x="174" y="236" fill="#142c42">Expert 2</text><text x="288" y="236" fill="#142c42">Expert 3</text><text x="402" y="236" fill="#bac6d2">Expert 4</text></g><rect x="145" y="308" width="170" height="42" rx="5" fill="#203c54" stroke="#506278"/><text x="230" y="334" text-anchor="middle" fill="#ecf1f5" font-size="14">Weighted combination</text></svg><p><span class="legend-swatch"></span> Two experts selected for each token</p><div class="architecture-footer"><span>RoPE positional encoding</span><span>KV-cached decoding</span></div></div>
-    </article>
-    <div class="project-grid">
-      <article class="project-card research-card"><div class="project-body"><p class="eyebrow">ONGOING RESEARCH</p><h3>Neural Network Pruning</h3><p>I'm studying how to prune neural networks so they get smaller without giving up much predictive performance.</p><ul class="tags"><li>Model efficiency</li><li>Neural networks</li><li>Pruning</li></ul><a class="project-link" href="#research-experience">Research background <span aria-hidden="true">↓</span></a></div></article>
-      <article class="project-card robotics-card"><div class="project-body"><p class="eyebrow">CWRUBOTIX · MATEROV</p><h3>Robot vision and control</h3><p>I build real-time computer vision pipelines with ROS and FLIR cameras. I've also written Python nodes for simulated robot control and set up camera streaming on a Raspberry Pi Zero 2 W.</p><ul class="tags"><li>ROS</li><li>Python</li><li>Computer vision</li><li>FLIR cameras</li></ul><a class="project-link" href="#robotics-experience">Robotics experience <span aria-hidden="true">↓</span></a></div></article>
+  <header class="bar">
+    <a href="#top" class="mark" aria-label="Fotih Turopov, back to top">ft</a>
+    <nav aria-label="Main">
+      <a href="#story-moe">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold bar-cta" href="assets/fotih-turopov-resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </header>
+
+  <section class="hero" id="top" aria-labelledby="name">
+    <div class="card hero-card">
+      <h1 id="name" class="hero-name"><span class="l1">Fotih</span> <span class="l2">Turopov</span></h1>
+      <p class="hero-lead">I build machine learning models and study how their design changes what they get right and what they cost to run.</p>
+      <ul class="hero-facts">
+        <li>BS Computer Science, MS Machine Learning &amp; AI</li>
+        <li>Case Western Reserve University, Cleveland</li>
+        <li>Graduating May 2028</li>
+      </ul>
+      <a class="btn btn-ink" href="#story-moe">See the work</a>
+      <figure class="plate hero-plate">
+        <img src="assets/fotih-turopov.jpg" alt="Fotih Turopov smiling, wearing glasses, at a desk with a lamp" width="345" height="469" fetchpriority="high">
+        <figcaption>Fotih Turopov</figcaption>
+      </figure>
+      <p class="hero-now">Right now: research assistant to Prof. Shuai Xu, robotics software for CWRUbotix, and teaching assistant for Introduction to AI.</p>
     </div>
-    <details class="earlier-work"><summary>Earlier software projects <span aria-hidden="true">+</span></summary>    <div class="project-grid">
-      <article class="project-card"><div class="project-image terminal-image"><img src="assets/neighborhood-navigator.png" alt="Neighborhood Navigator terminal interface showing housing data" loading="lazy" width="900" height="550"></div><div class="project-body"><p class="eyebrow">DATA & DECISION TOOLS</p><h3>Neighborhood Navigator</h3><p>A terminal program that filters and ranks homes by what you care about, with graphs for comparing them.</p><ul class="tags"><li>Python</li><li>Data analysis</li><li>Visualization</li></ul><details><summary>Project details <span aria-hidden="true">+</span></summary><div class="detail-content"><p>I wanted an easier way to compare the properties in a housing dataset. The program reads each home's attributes, applies the filters you choose, ranks the matches with a weighted score, and shows the results in the terminal along with graphs.</p></div></details></div></article>
-      <article class="project-card"><div class="project-image pet-image"><img src="assets/virtual-pet.png" alt="Virtual Pet Simulator game interface" loading="lazy" width="700" height="550"></div><div class="project-body"><p class="eyebrow">INTERACTIVE APPLICATIONS</p><h3>Virtual Pet Simulator</h3><p>A pet game where your choices change how it plays. It has a shop with its own money system and an inventory that the game keeps track of.</p><ul class="tags"><li>JavaScript</li><li>Game logic</li><li>State management</li></ul><a class="project-link" href="https://studio.code.org/projects/applab/c05hmcg-K2--z8EHB5L-U918Ysys3a_zXxupohsXffI" target="_blank" rel="noopener">Play the game <span aria-hidden="true">↗</span></a></div></article>
-    </div></details>
   </section>
-  <section id="about" class="about wrap" aria-labelledby="about-title"><div><p class="eyebrow">02 / ABOUT ME</p><h2 id="about-title">I like knowing <br><em>how</em> things <em>work.</em></h2></div><div class="about-copy"><p class="large-copy">I'm pursuing a BS in Computer Science and an MS in Machine Learning and Artificial Intelligence at Case Western Reserve University, with minors in Business Management and Mathematics. My expected graduation is May 2028.</p><p>My work spans ML research with Prof. Shuai Xu, robotics software with CWRUbotix, and teaching introductory AI. I'm interested in how model design affects both predictive performance and the practical cost of running a system.</p><p>I like to see a project through, from the first version of the code to testing it and checking whether the results hold up.</p><div class="skills" aria-label="Technical skills"><span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>ROS</span><span>Java</span><span>JavaScript</span><span>SQL</span><span>Git</span><span>Ubuntu</span></div></div></section>
-  <section id="experience" class="experience wrap" aria-labelledby="experience-title"><div class="section-heading"><div><p class="eyebrow">03 / EXPERIENCE</p><h2 id="experience-title">Where I've worked</h2></div></div><article id="research-experience" class="experience-row research-experience"><p class="experience-date">SEP 2025 TO PRESENT</p><div><h3>AI / Machine Learning Research Assistant</h3><p class="organization">Case Western Reserve University · Prof. Shuai Xu</p><p>I read papers on deep learning and mixture-of-experts models to find open questions. I help design experiments that measure model performance and architecture trade-offs, and I talk through model design and next experiments with faculty and graduate students.</p><ul class="tags"><li>Deep learning</li><li>Experimental design</li><li>Literature review</li></ul></div><span class="experience-mark" aria-hidden="true">ML</span></article><article id="robotics-experience" class="experience-row"><p class="experience-date">JAN 2025 TO PRESENT</p><div><h3>Robotics Software Team Member</h3><p class="organization">CWRUbotix · MATEROV</p><p>I wrote ROS nodes in Python to control a simulated robot during the team's training bootcamp. I set up a Raspberry Pi Zero 2 W to stream video for a USB photosphere imaging system, and I build real-time object detection pipelines with ROS and FLIR cameras.</p><ul class="tags"><li>ROS</li><li>Computer vision</li><li>Camera integration</li></ul></div><span class="experience-mark" aria-hidden="true">CV</span></article><article class="experience-row"><p class="experience-date">AUG 2026 TO PRESENT</p><div><h3>Teaching Assistant · Introduction to AI</h3><p class="organization">Case Western Reserve University · CSDS 330</p><p>I hold office hours and recitations for a 48-student course and grade assignments and exams for 15 of those students. I also help students debug their programming assignments and review their code for search, machine learning, and probabilistic reasoning.</p><ul class="tags"><li>Algorithm review</li><li>Debugging</li><li>Technical communication</li></ul></div><span class="experience-mark" aria-hidden="true">TA</span></article><div id="resume" class="resume-banner"><div><h3>Résumé</h3><p>My education, work history, projects, and skills in one PDF.</p></div><div class="resume-links"><a class="button primary" href="assets/fotih-turopov-resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a><a class="text-link" href="assets/fotih-turopov-resume.pdf" download>Download PDF <span aria-hidden="true">↓</span></a></div></div></section>
-  <section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">04 / GET IN TOUCH</p><h2 id="contact-title">Send me<br>a message.</h2><p>If you have an opportunity or a question about my work, I'd like to hear from you.</p><div class="contact-social"><a href="https://www.linkedin.com/in/fotih-turopov-a49686332/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/fotiht" target="_blank" rel="noopener">GitHub ↗</a></div></div><form action="https://formspree.io/f/movdknjz" method="post"><div class="form-row"><label>Your name<input name="name" autocomplete="name" required placeholder="Name"></label><label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label></div><label>What's on your mind?<textarea name="message" rows="4" required placeholder="Tell me a little about it…"></textarea></label><button class="button light" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-note">Messages go through Formspree.</p></form></div></section>
+
+  <section class="moe" id="story-moe" aria-labelledby="moe-title">
+    <div class="moe-plate card">
+      <div class="router" data-router>
+        <p class="router-tokens" aria-label="Words in the sentence. Pick one to see where it is routed." data-tokens>
+          <button type="button" class="tok is-on" aria-pressed="true">time</button>
+        </p>
+        <svg class="router-fig" viewBox="0 0 400 330" role="img" aria-labelledby="fig-t fig-d">
+          <title id="fig-t">Top-2 expert routing</title>
+          <desc id="fig-d" data-desc>The word goes to a router, which sends it to two of four experts. Their outputs are mixed by the router's weights.</desc>
+          <g class="wires">
+            <path d="M200 52V84"/>
+            <path class="w" data-w="0" d="M200 124V146H50V172"/>
+            <path class="w" data-w="1" d="M200 146H150V172"/>
+            <path class="w" data-w="2" d="M200 146H250V172"/>
+            <path class="w" data-w="3" d="M200 146H350V172"/>
+            <path class="w" data-w="0" d="M50 228V250H200"/>
+            <path class="w" data-w="1" d="M150 228V250"/>
+            <path class="w" data-w="2" d="M250 228V250"/>
+            <path class="w" data-w="3" d="M350 228V250H200"/>
+            <path d="M200 250V272"/>
+          </g>
+          <rect class="box box-ink" x="110" y="12" width="180" height="40"/>
+          <text class="t t-light" x="200" y="39" data-word>“time”</text>
+          <rect class="box box-ink" x="130" y="84" width="140" height="40"/>
+          <text class="t t-light" x="200" y="111">Router</text>
+          <g class="experts">
+            <g class="ex" data-ex="0"><rect class="box" x="8" y="172" width="84" height="56"/><text class="t" x="50" y="197">Expert 1</text><text class="t t-w" x="50" y="218" data-wt>0.00</text></g>
+            <g class="ex" data-ex="1"><rect class="box" x="108" y="172" width="84" height="56"/><text class="t" x="150" y="197">Expert 2</text><text class="t t-w" x="150" y="218" data-wt>0.00</text></g>
+            <g class="ex" data-ex="2"><rect class="box" x="208" y="172" width="84" height="56"/><text class="t" x="250" y="197">Expert 3</text><text class="t t-w" x="250" y="218" data-wt>0.00</text></g>
+            <g class="ex" data-ex="3"><rect class="box" x="308" y="172" width="84" height="56"/><text class="t" x="350" y="197">Expert 4</text><text class="t t-w" x="350" y="218" data-wt>0.00</text></g>
+          </g>
+          <rect class="box box-ink" x="110" y="272" width="180" height="40"/>
+          <text class="t t-light" x="200" y="299">Weighted mix</text>
+        </svg>
+        <label class="router-input">
+          <span>Type a sentence</span>
+          <input type="text" value="Once upon a time a small robot found a shell" maxlength="80" autocomplete="off" spellcheck="false" data-input>
+        </label>
+        <p class="router-note">A toy router with fixed random weights, so you can watch the mechanism. In the real model the router learns its weights in training.</p>
+      </div>
+    </div>
+
+    <div class="moe-copy">
+      <div class="tabs" role="tablist" aria-label="Story MoE details">
+        <button type="button" role="tab" id="tab-model" aria-controls="pane-model" aria-selected="true">Model</button>
+        <button type="button" role="tab" id="tab-results" aria-controls="pane-results" aria-selected="false" tabindex="-1">Results</button>
+        <button type="button" role="tab" id="tab-checks" aria-controls="pane-checks" aria-selected="false" tabindex="-1">Checks</button>
+      </div>
+
+      <div class="moe-body">
+        <h2 id="moe-title" class="head">Story MoE</h2>
+        <div class="pane" role="tabpanel" id="pane-model" aria-labelledby="tab-model">
+          <p>A mixture-of-experts language model I wrote and trained from scratch in PyTorch. It is a 60.6M-parameter decoder-only transformer. For every word, a learned router picks two expert networks out of several, so only part of the model runs for each word.</p>
+          <p>It uses rotary position embeddings and generates text with a key-value cache. I trained it on 20M tokens of TinyStories.</p>
+        </div>
+        <div class="pane" role="tabpanel" id="pane-results" aria-labelledby="tab-results" hidden>
+          <p>Against a dense model trained on the same 20M tokens, the sparse model reached 6.9% lower validation perplexity. Lower is better: it was less surprised by stories it had not seen.</p>
+          <table class="results">
+            <caption>Validation perplexity on TinyStories</caption>
+            <thead><tr><th scope="col">Model</th><th scope="col">Perplexity</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Sparse, top-2 experts</th><td>10.03</td></tr>
+              <tr><th scope="row">Dense baseline</th><td>10.77</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pane" role="tabpanel" id="pane-checks" aria-labelledby="tab-checks" hidden>
+          <p>A model can train and still be wrong in quiet ways, so I wrote tests for the parts that fail silently:</p>
+          <ul class="checks">
+            <li>Attention is causal: no word can see the words after it.</li>
+            <li>Gradients reach the router through the expert weights.</li>
+            <li>Cached and uncached generation produce the same text.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cells">
+        <a class="cell cell-gold" href="https://github.com/fotiht/story_moe" target="_blank" rel="noopener">Code on GitHub <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+        <a class="cell cell-tone" href="https://github.com/fotiht?tab=repositories" target="_blank" rel="noopener">All repositories <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="files" aria-labelledby="files-title">
+    <h2 id="files-title" class="sub">More work</h2>
+
+    <article class="folder f1" style="--i:0">
+      <div class="folder-tab"><h3>Neural network pruning</h3></div>
+      <div class="folder-body">
+        <p class="folder-kind">Ongoing research</p>
+        <figure class="folder-pic">
+          <img src="assets/kelvin-smith-library-case-western-reserve-university.jpg" alt="Kelvin Smith Library on the Case Western Reserve campus, students walking past on a sunny day" width="1600" height="1102" decoding="async">
+          <figcaption>Kelvin Smith Library, Case Western Reserve</figcaption>
+        </figure>
+        <div class="folder-text">
+          <p>With Prof. Shuai Xu I study how to prune neural networks: removing weights so a model gets smaller and cheaper to run without giving up much accuracy. It is the same question as Story MoE from the other side. Instead of running only part of a large model, make the model itself smaller.</p>
+          <p>The work is in progress, so there are no results to show yet.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder f2" style="--i:1">
+      <div class="folder-tab"><h3>Robot vision</h3></div>
+      <div class="folder-body">
+        <p class="folder-kind">CWRUbotix, MATE ROV</p>
+        <figure class="folder-pic">
+          <img src="assets/rov-kaiko-mk-iv-p5123684.jpg" alt="The yellow deep-sea research ROV Kaiko Mk-IV on display, its frame of thrusters, cameras and a manipulator arm exposed" width="1600" height="1200" decoding="async">
+          <figcaption>Kaiko Mk-IV, a deep-sea research ROV. CWRUbotix builds a much smaller one for the MATE ROV competition.</figcaption>
+        </figure>
+        <div class="folder-text">
+          <p>CWRUbotix builds an underwater robot for the MATE ROV competition. I build real-time object detection pipelines with ROS and FLIR cameras.</p>
+          <p>I set up a Raspberry Pi Zero 2 W to stream video for a USB photosphere imaging system. During the team's bootcamp I also wrote ROS nodes in Python to drive a simulated robot.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder f3" style="--i:2">
+      <div class="folder-tab"><h3>Neighborhood Navigator</h3></div>
+      <div class="folder-body">
+        <p class="folder-kind">Python, data analysis</p>
+        <figure class="folder-pic folder-shot">
+          <img src="assets/neighborhood-navigator.png" alt="Terminal menu of Neighborhood Navigator above a histogram of house sale prices" width="900" height="550" decoding="async">
+          <figcaption>The price distribution of the homes left after filtering.</figcaption>
+        </figure>
+        <div class="folder-text">
+          <p>A terminal program for comparing homes in a housing dataset. You choose the filters that matter to you. It ranks the matches with a weighted score and draws graphs to compare them: price distribution, prices by neighborhood, and area against price.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder f4" style="--i:3">
+      <div class="folder-tab"><h3>Virtual Pet Simulator</h3></div>
+      <div class="folder-body">
+        <p class="folder-kind">JavaScript game</p>
+        <figure class="folder-pic folder-shot">
+          <img src="assets/virtual-pet.png" alt="Virtual Pet Simulator game screen" width="700" height="550" decoding="async">
+          <figcaption>Built in Code.org App Lab.</figcaption>
+        </figure>
+        <div class="folder-text">
+          <p>A pet game where your choices change how it plays. It has a shop with its own money system and an inventory that the game keeps track of.</p>
+          <p><a class="link" href="https://studio.code.org/projects/applab/c05hmcg-K2--z8EHB5L-U918Ysys3a_zXxupohsXffI" target="_blank" rel="noopener">Play the game <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="letter">
+      <div class="letter-sheet">
+        <img class="letter-face" src="assets/fotih-turopov.jpg" alt="" width="345" height="469" loading="lazy">
+        <h2 id="about-title" class="sub">Hi, I’m Fotih.</h2>
+        <p>I’m working toward a BS in Computer Science and an MS in Machine Learning and Artificial Intelligence at Case Western Reserve, with minors in Business Management and Mathematics. I finish in May 2028.</p>
+        <p>I like knowing how things work, all the way down. That is why I wrote Story MoE from the attention layer up instead of loading a pretrained model, and why I wrote tests for the parts that could be quietly wrong.</p>
+        <p>The question I keep coming back to is cost: how a model’s design changes both what it predicts well and what it takes to run. Sparse experts and pruning are two answers to it.</p>
+        <p>Outside research, I write vision code for an underwater robot and teach introductory AI.</p>
+        <p>I like to see a project through, from the first version of the code to testing it and checking whether the results hold up.</p>
+        <p class="sign">Fotih Turopov</p>
+        <p class="sign-role">Cleveland, Ohio</p>
+      </div>
+      <div class="stub">
+        <a href="mailto:fxt123@case.edu">fxt123@case.edu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience" aria-labelledby="exp-title">
+    <div class="sheet">
+      <h2 id="exp-title" class="sub">Experience</h2>
+      <p class="sheet-note">Newest first, within each group.</p>
+
+      <div class="group">
+        <h3>Research</h3>
+        <dl>
+          <div class="item"><dt>AI / machine learning research assistant</dt><dd class="when">Sep 2025 – now</dd><dd class="what">With Prof. Shuai Xu. I review papers on deep learning and mixture-of-experts models to find open questions, help design experiments that measure performance and architecture trade-offs, and talk through next steps with faculty and graduate students.</dd></div>
+        </dl>
+      </div>
+
+      <div class="group">
+        <h3>Teaching</h3>
+        <dl>
+          <div class="item"><dt>Teaching assistant, Introduction to AI</dt><dd class="when">Aug 2026 – now</dd><dd class="what">CSDS 330, a 48-student course. I hold office hours and recitations, grade for 15 students, and help debug assignments on search, machine learning and probabilistic reasoning.</dd></div>
+        </dl>
+      </div>
+
+      <div class="group">
+        <h3>Engineering</h3>
+        <dl>
+          <div class="item"><dt>Robotics software team</dt><dd class="when">Jan 2025 – now</dd><dd class="what">CWRUbotix, MATE ROV. Real-time object detection with ROS and FLIR cameras, Raspberry Pi camera streaming, ROS nodes for simulated control.</dd></div>
+          <div class="item"><dt>Office assistant</dt><dd class="when">Sep 2024 – now</dd><dd class="what">Weatherhead School of Management. I prepared 200+ mailings and gift packages for donors and alumni, and tracked inventory of 2,500+ items.</dd></div>
+        </dl>
+      </div>
+
+      <div class="group">
+        <h3>Education</h3>
+        <dl>
+          <div class="item"><dt>MS, Machine Learning and AI</dt><dd class="when">May 2028</dd><dd class="what">Case Western Reserve University.</dd></div>
+          <div class="item"><dt>BS, Computer Science</dt><dd class="when">May 2028</dd><dd class="what">Minors in Business Management and Mathematics. Dean’s Honor List 2025 and 2026, Dean’s High Honor List 2026.</dd></div>
+        </dl>
+      </div>
+
+      <div class="group">
+        <h3>Tools</h3>
+        <p class="tools">Python, PyTorch, TensorFlow, ROS, Java, JavaScript, SQL, Git, Ubuntu</p>
+      </div>
+
+      <p class="sheet-end">
+        <a class="link" href="assets/fotih-turopov-resume.pdf" target="_blank" rel="noopener">Read the full résumé</a><br>
+        <a class="link" href="assets/fotih-turopov-resume.pdf" download>Download it as a PDF</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <img class="contact-photo" src="assets/cleveland-skyline-from-lakewood-park-january-2026.jpg" alt="The Cleveland skyline across Lake Erie in winter, seen from Lakewood Park" width="1920" height="1016" loading="lazy">
+    <div class="visit card">
+      <h2 id="contact-title" class="sub">Write to me</h2>
+      <p>If you have an opportunity or a question about my work, I’d like to hear it. Email works best: <a class="link" href="mailto:fxt123@case.edu">fxt123@case.edu</a></p>
+      <form action="https://formspree.io/f/movdknjz" method="post" data-form>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Your email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Message<textarea name="message" rows="3" required></textarea></label>
+        <p class="form-status" role="status" aria-live="polite" data-status></p>
+        <button class="btn btn-gold visit-send" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
 </main>
-<footer class="wrap footer"><a href="#" class="brand"><span class="monogram">ft<span>.</span></span><span>Fotih Turopov</span></a><p>© <span id="year">2026</span> · Built in Cleveland.</p><a href="#main" class="text-link">Back to top ↑</a></footer>
-</body></html>
+
+<footer class="back">
+  <div class="postcard">
+    <div class="pc-msg">
+      <p class="pc-sign">Thanks for reading.</p>
+      <p>Written and built by me in Cleveland. The source for this site is on GitHub, like the rest of my work.</p>
+    </div>
+    <div class="pc-addr">
+      <img class="stamp" src="assets/fotih-turopov.jpg" alt="" width="345" height="469" loading="lazy">
+      <ul>
+        <li><a href="mailto:fxt123@case.edu">fxt123@case.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/fotih-turopov-a49686332/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/fotiht" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="assets/fotih-turopov-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+      </ul>
+    </div>
+    <p class="imprint">© <span data-year>2026</span> Fotih Turopov. Pictures: <a href="https://commons.wikimedia.org/w/index.php?curid=183038491">Cleveland skyline from Lakewood Park</a> by Erik Drost, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=141156928">Kelvin Smith Library</a> by Usaf 1832, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=69056913">ROV Kaiko Mk-IV</a> by Kestrel, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; all via Wikimedia Commons.</p>
+  </div>
+</footer>
+</body>
+</html>
