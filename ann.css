@@ -1,0 +1,29 @@
+/* Vector Search: toy HNSW map. Reuses the Story MoE layout (.moe, .moe-plate, .tabs, .pane). */
+.ann { margin-top: var(--gap); }
+@media (min-width: 1025px) {
+  .ann .moe-plate { order: 2; }
+}
+.ann-map { width: 100%; display: flex; flex-direction: column; gap: 16px; }
+.ann-fig { width: 100%; height: auto; cursor: crosshair; background: #ffffff; border: 2px solid var(--paper-2); touch-action: manipulation; }
+.ann-fig .e0 { stroke: var(--paper-2); stroke-width: 1.2; }
+.ann-fig .e1 { stroke: var(--wire); stroke-width: 2; }
+.ann-fig .e2 { stroke: var(--ink-soft); stroke-width: 3.4; }
+.ann-fig .n0 { fill: var(--paper-2); stroke: var(--wire); stroke-width: 1; }
+.ann-fig .n1 { fill: var(--ink-soft); }
+.ann-fig .n2 { fill: var(--ink); }
+.ann-fig .n0, .ann-fig .n1, .ann-fig .n2 { transition: fill 220ms ease, stroke 220ms ease; }
+.ann-fig .look { fill: var(--gold); stroke: var(--ink); stroke-width: 1.4; }
+.ann-fig .hop { fill: var(--gold); stroke: var(--ink); stroke-width: 2.4; }
+.ann-fig .trail { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+.ann-fig .ring-found { fill: none; stroke: var(--ink); stroke-width: 3; }
+.ann-fig .ring-true { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 3 3; }
+.ann-fig .ann-query { fill: var(--gold); stroke: var(--ink); stroke-width: 2.5; }
+.ann-readout { min-height: 3.1em; font-size: var(--step-body); }
+.ann-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 24px; }
+.ann-ef { display: grid; gap: 6px; flex: 1 1 200px; font-size: var(--step-small); color: var(--ink-soft); }
+.ann-ef b { color: var(--ink); font-weight: 500; }
+.ann-ef input { width: 100%; min-height: 32px; accent-color: var(--ink); }
+.ann-legend { font-size: var(--step-small); color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .ann-readout { min-height: 4.6em; }
+}
