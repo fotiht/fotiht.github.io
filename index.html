@@ -11,8 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ann.css">
   <script>document.documentElement.classList.add('js')</script>
   <script src="script.js" defer></script>
+  <script src="ann.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -130,6 +132,70 @@
     </div>
   </section>
 
+  <section class="moe ann" id="vector-search" aria-labelledby="ann-title">
+    <div class="moe-plate card">
+      <div class="ann-map" data-ann>
+        <svg class="ann-fig" data-ann-svg viewBox="0 0 400 330" role="img" aria-labelledby="ann-t ann-d">
+          <title id="ann-t">A toy map of a vector search</title>
+          <desc id="ann-d">Sixty-four points joined in three layers. A search starts at a large point in the top layer, hops to whichever neighbour is closer to the gold query diamond, and drops a layer when it cannot get closer.</desc>
+        </svg>
+        <p class="ann-readout" role="status" aria-live="polite" data-ann-readout></p>
+        <div class="ann-controls">
+          <label class="ann-ef">
+            <span>ef, the size of the candidate list: <b data-ann-ef-out>4</b></span>
+            <input type="range" min="3" max="10" value="4" data-ann-ef aria-label="ef, the size of the candidate list">
+          </label>
+          <button type="button" class="tok" data-ann-random>New query</button>
+        </div>
+        <p class="ann-legend">Click the map to move the query. Gold points: looked at. Solid ring: what the search found. Dashed ring: the true three nearest. This is a toy map of 64 points in 2D. The real index handles 1 million vectors with 128 numbers each.</p>
+      </div>
+    </div>
+
+    <div class="moe-copy">
+      <div class="tabs" role="tablist" aria-label="Vector search details">
+        <button type="button" role="tab" id="tab-ann-how" aria-controls="pane-ann-how" aria-selected="true">How</button>
+        <button type="button" role="tab" id="tab-ann-results" aria-controls="pane-ann-results" aria-selected="false" tabindex="-1">Results</button>
+        <button type="button" role="tab" id="tab-ann-limits" aria-controls="pane-ann-limits" aria-selected="false" tabindex="-1">Limits</button>
+      </div>
+
+      <div class="moe-body">
+        <h2 id="ann-title" class="head">Vector search</h2>
+        <div class="pane" role="tabpanel" id="pane-ann-how" aria-labelledby="tab-ann-how">
+          <p>A vector search index built from scratch in Python and Numba. Points sit in layers: a few joined by long links on top, all of them at the bottom. A search starts at the top, hops to whichever neighbour is closer to the query, and drops a layer when it cannot get closer.</p>
+          <p>At the bottom it keeps a short list of the best candidates, and ef is the size of that list. Try a small ef: the search looks at fewer points but can miss a true neighbour.</p>
+        </div>
+        <div class="pane" role="tabpanel" id="pane-ann-results" aria-labelledby="tab-ann-results" hidden>
+          <p>On 1 million SIFT vectors it reaches 0.979 recall at 3,034 queries per second, 34 times faster than exact search in NumPy. Against FAISS at the same recall, on one thread:</p>
+          <table class="results">
+            <caption>Speed compared with FAISS. Above 1 means mine is faster.</caption>
+            <thead><tr><th scope="col">Data</th><th scope="col">Ratio</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">SIFT, 100k vectors</th><td>1.05 to 1.19</td></tr>
+              <tr><th scope="row">SIFT, 1M vectors</th><td>0.98 to 1.09</td></tr>
+              <tr><th scope="row">GloVe, 1.2M, recall 0.9 to 0.97</th><td>1.1 to 1.6</td></tr>
+              <tr><th scope="row">SIFT 100k, four threads</th><td>0.79 to 0.96</td></tr>
+            </tbody>
+          </table>
+          <p>Interpolated from my benchmark logs, not re-measured.</p>
+        </div>
+        <div class="pane" role="tabpanel" id="pane-ann-limits" aria-labelledby="tab-ann-limits" hidden>
+          <p>The README says where it loses, so I will too:</p>
+          <ul class="checks">
+            <li>With four threads FAISS is ahead.</li>
+            <li>My memory figure counts only the links in use. The arrays reserve more, about 117 MB at 100,000 vectors against 65.6 MB for FAISS.</li>
+            <li>I never varied M or efConstruction. Every run uses M = 16 and efConstruction = 100.</li>
+            <li>Timings come from one shared 4-core server and vary by 20 to 30 percent between runs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cells">
+        <a class="cell cell-gold" href="https://github.com/fotiht/ann-index" target="_blank" rel="noopener">Code on GitHub <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+        <a class="cell cell-tone" href="https://github.com/fotiht/ann-index/blob/main/WRITEUP.md" target="_blank" rel="noopener">Read the write-up <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
   <section class="files" aria-labelledby="files-title">
     <h2 id="files-title" class="sub">More work</h2>
 
@@ -173,21 +239,6 @@
         </figure>
         <div class="folder-text">
           <p>A terminal program for comparing homes in a housing dataset. You choose the filters that matter to you. It ranks the matches with a weighted score and draws graphs to compare them: price distribution, prices by neighborhood, and area against price.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="folder f4" style="--i:3">
-      <div class="folder-tab"><h3>Virtual Pet Simulator</h3></div>
-      <div class="folder-body">
-        <p class="folder-kind">JavaScript game</p>
-        <figure class="folder-pic folder-shot">
-          <img src="assets/virtual-pet.png" alt="Virtual Pet Simulator game screen" width="700" height="550" decoding="async">
-          <figcaption>Built in Code.org App Lab.</figcaption>
-        </figure>
-        <div class="folder-text">
-          <p>A pet game where your choices change how it plays. It has a shop with its own money system and an inventory that the game keeps track of.</p>
-          <p><a class="link" href="https://studio.code.org/projects/applab/c05hmcg-K2--z8EHB5L-U918Ysys3a_zXxupohsXffI" target="_blank" rel="noopener">Play the game <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></p>
         </div>
       </div>
     </article>
