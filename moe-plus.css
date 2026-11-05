@@ -1,0 +1,24 @@
+/* Story MoE, extra controls. Also keeps the robot photo in colour. */
+.moe-extra { display: grid; gap: 12px; }
+.moe-k { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: var(--step-small); color: var(--ink-soft); }
+.moe-k span { margin-right: 4px; }
+.moe-k .tok { min-height: 36px; font-size: var(--step-small); }
+.moe-meter { font-size: var(--step-small); color: var(--ink-soft); }
+.moe-meter b { color: var(--ink); font-weight: 500; }
+.moe-bar { height: 6px; background: var(--paper-2); }
+.moe-bar i { display: block; height: 100%; background: var(--ink); transition: width 320ms var(--ease-out); }
+.moe-load { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; align-items: end; }
+.moe-col { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-end; gap: 4px; text-align: center; font-size: 12px; color: var(--ink-soft); min-height: 78px; }
+.moe-col .n { font-variant-numeric: tabular-nums; color: var(--ink); }
+.moe-col i { display: block; background: var(--paper-2); transition: height 320ms var(--ease-out), background-color 200ms ease; }
+.moe-col.pin i { background: var(--gold); }
+.moe-help { font-size: var(--step-small); color: var(--ink-soft); }
+.router-fig .ex { cursor: pointer; }
+.router-fig .ex.pinned .box { stroke: var(--ink); stroke-width: 3; }
+.router-fig .wbar-bg { fill: var(--paper); }
+.router-fig .wbar { fill: var(--ink); transition: width 320ms var(--ease-out); }
+.router-fig .ex.on .wbar-bg { fill: #ffffff; }
+.tok.tok-hit { box-shadow: inset 0 -4px 0 var(--gold); }
+
+/* the robot photo keeps its colours and its own proportions */
+.folder.f2 .folder-pic img { filter: none; aspect-ratio: 1089 / 576; object-fit: cover; }
